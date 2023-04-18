@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  komga:
+    image: gotson/komga:latest
+    container_name: komga
+    volumes:
+      - "./config:/config:rw"
+      - "./data:/data:rw"
+    ports:
+      - 8090:8080
+    user: "0:0"
+    restart: unless-stopped
